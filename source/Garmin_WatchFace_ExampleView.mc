@@ -188,10 +188,10 @@ class Garmin_WatchFace_ExampleView extends WatchUi.WatchFace {
         dc.drawText(width/2 + 3, mRow7, gIconsFont, "e", textLeftCenter);
 
         dc.setColor(gFGColor, Graphics.COLOR_TRANSPARENT);   
-        dc.drawText(width/2 + 28, mRow2, Graphics.FONT_SYSTEM_TINY, mSteps, textLeftCenter);  
-        dc.drawText(width/2 + 28, mRow3, Graphics.FONT_SYSTEM_TINY, mCalories, textLeftCenter);
-        dc.drawText(width/2 + 28, mRow6, Graphics.FONT_SYSTEM_TINY, mDistances, textLeftCenter);
-        dc.drawText(width/2 + 28, mRow7, Graphics.FONT_SYSTEM_TINY, mFloorsclimbed, textLeftCenter);
+        dc.drawText(width/2 + 28, mRow2, Graphics.FONT_SYSTEM_TINY, mSteps.toString(), textLeftCenter);  
+        dc.drawText(width/2 + 28, mRow3, Graphics.FONT_SYSTEM_TINY, mCalories.toString(), textLeftCenter);
+        dc.drawText(width/2 + 28, mRow6, Graphics.FONT_SYSTEM_TINY, mDistances.toString(), textLeftCenter);
+        dc.drawText(width/2 + 28, mRow7, Graphics.FONT_SYSTEM_TINY, mFloorsclimbed.toString(), textLeftCenter);
 
         //Date-------------------------------------------------------
         var mySettings = System.getDeviceSettings();
@@ -309,7 +309,7 @@ class Garmin_WatchFace_ExampleView extends WatchUi.WatchFace {
         dc.setColor(gFGColor, Graphics.COLOR_TRANSPARENT); 
         dc.drawText(width/2 + 3 + 28, mRow5, Graphics.FONT_SYSTEM_TINY, mTemp, textLeftCenter);
         dc.drawText(width/2, mRow9, Graphics.FONT_SYSTEM_XTINY, mLn, textCenter);
-        dc.drawText(width/2 + 3 + 28, mRow4, Graphics.FONT_SYSTEM_TINY, mAtitude.toNumber(), textLeftCenter);
+        dc.drawText(width/2 + 3 + 28, mRow4, Graphics.FONT_SYSTEM_TINY, mAtitude.toString(), textLeftCenter);
 
         dc.setColor(gIconColor, Graphics.COLOR_TRANSPARENT);
         stringWidth = width/2 + 3;

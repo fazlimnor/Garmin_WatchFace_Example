@@ -6,6 +6,7 @@ import Toybox.Time.Gregorian;
 import Toybox.Background;
 import Toybox.System;
 import Toybox.Communications;
+import Toybox.Lang;
 // The Service Delegate is the main entry point for background processes
 // our onTemporalEvent() method will get run each time our periodic event
 // is triggered by the system.
@@ -17,6 +18,7 @@ class BackgroundServiceDelegate extends System.ServiceDelegate {
 	}
 
 	function onTemporalEvent() {
+		var responseCallback = method(:responseCallbackWeather);  
 		var options = {
 			:method => Communications.HTTP_REQUEST_METHOD_GET,
 			:headers => {"Content-Type" => Communications.REQUEST_CONTENT_TYPE_URL_ENCODED},
@@ -57,7 +59,7 @@ class BackgroundServiceDelegate extends System.ServiceDelegate {
 		*/
     }
 	
-	function responseCallbackWeather(responseCode, data) {
+	function responseCallbackWeather(responseCode as Number, data as Null or Dictionary or String) as Void {
 		var result;
 		if (responseCode == 200){
 				result = data;
